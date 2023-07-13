@@ -32,7 +32,8 @@ Tutorials for debuggers:
 Get familar with coding standards and best practices! This improve your code by a lot and makes it much easier to maintain.
 
 - [The Hitchhiker’s Guide to Python Code Style](https://docs.python-guide.org/writing/style/)
-
+- [A PyTorch Tools, best practices & Styleguide](https://github.com/IgorSusmelj/pytorch-styleguide)
+ 
 You can use automated tools to enforce coding styles:
 
 - [VSCode: Using Black to automatically format Python](https://dev.to/adamlombard/how-to-use-the-black-python-code-formatter-in-vscode-3lo0)
@@ -42,12 +43,31 @@ You can use automated tools to enforce coding styles:
 
 Today's machine learning requires large computing resources that your local machine won't have. Thus, you need to connect a remote server to run your experiments.
 
+- [How to use CLI instead of GUI](https://github.com/you-dont-need/You-Dont-Need-GUI)
+
 ### SSH
 
-- SSH key
-- SSH config
+- [How to Use SSH to Connect to a Remote Server in Linux or Windows](https://phoenixnap.com/kb/ssh-to-connect-to-remote-server-linux-or-windows)
+- http://projects.dfki.uni-kl.de/km-publications/web/ML/core/hpc-doc/docs/guidelines/getting-started/
 
-### tmux, screen, ...
+SSH keys
+- [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+SSH config
+- https://linuxhandbook.com/ssh-config-file/
+- https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
+
+### tmux
+
+You connection to a remote might be lost and, therefore, it is important to maintain sessions of the remote server independent from your own connection. 
+`tmux` provides this and many other features that will make your work on remote servers much easier.
+
+- [A Quick and Easy Guide to tmux](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)
+- [tmux cheatsheet](https://gist.github.com/henrik/1967800)
+
+Alternatives to tmux are: [screen](https://linuxize.com/post/how-to-use-linux-screen/), ...
+
+
 
 ### Environment
 
