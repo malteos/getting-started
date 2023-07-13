@@ -8,9 +8,39 @@ The information are mainly tailored to users of [DFKI's PEGASUS system](http://p
 
 ### IDE
 
+- https://code.visualstudio.com/
+   - Python with VSCode: https://donjayamanne.github.io/pythonVSCodeDocs/docs/python-path/
+- https://www.jetbrains.com/pycharm/
+
 ### Debugger
 
+One of the key features of any good IDE is its debugging support. The debugger will make it much easier to fix your code (no need for print-statements anymore).
+
+Tutorials for debuggers:
+- https://code.visualstudio.com/docs/editor/debugging
+- https://www.youtube.com/watch?v=6cOsxaNC06c
+- How To Debug Python Code In Visual Studio Code (VSCode) https://www.youtube.com/watch?v=oCcTiRGPogQ
+
+
+### GitHub Copilot
+
+- If you are a student, apply for a [GitHub education account](https://education.github.com/discount_requests/application).
+- Install [GitHub Copilot](https://github.com/features/copilot)! See [VSCode extensions](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot).
+
+### Coding best practices
+
+Get familar with coding standards and best practices! This improve your code by a lot and makes it much easier to maintain.
+
+- [The Hitchhiker’s Guide to Python Code Style](https://docs.python-guide.org/writing/style/)
+
+You can use automated tools to enforce coding styles:
+
+- [VSCode: Using Black to automatically format Python](https://dev.to/adamlombard/how-to-use-the-black-python-code-formatter-in-vscode-3lo0)
+- [Python: Linting & Formatting](https://py-vscode.readthedocs.io/en/latest/files/linting.html)
+
 ## Remote server 
+
+Today's machine learning requires large computing resources that your local machine won't have. Thus, you need to connect a remote server to run your experiments.
 
 ### SSH
 
