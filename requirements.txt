@@ -1,0 +1,19 @@
+# put your python dependencies into this file
+# ...
+
+# same as docker image
+torch==2.0.0
+
+# HF
+transformers>=4.26.1
+datasets>=2.10.1
+tokenizers>=0.13.2
+huggingface-hub==0.14.0rc1
+
+# others
+jupyter
+numpy
+pandas
+smart-open
+requests
+tensorboard>=2.12.0
