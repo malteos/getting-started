@@ -53,9 +53,23 @@ Today's machine learning requires large computing resources that your local mach
 SSH keys
 - [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-SSH config
+### SSH config
 - https://linuxhandbook.com/ssh-config-file/
 - https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/
+
+#### Example
+
+A SSH-config may contain entries like below. Replace `<dfki_account`> with your DFKI Account and `<pegasus_account>` with your PEGASUS account.
+```bash
+# PEGASUS via SSH-Gate
+Host pegasus.dfki  # a custom hostname
+    User <pegasus_account>
+    HostName login2.pegasus.kl.dfki.de  # change this to a different login node if needed
+    ProxyJump <pegasus_account>@sshgate.sb.dfki.de
+
+```
+
+With such a config, you can simply connect to PEGASUS by typing `ssh pegasus.dfki`.
 
 ### tmux
 
@@ -102,6 +116,53 @@ export WANDB_API_KEY<your WANDB api>
 
 ## Slurm
 
+Read the [PEGASUS documentation](http://projects.dfki.uni-kl.de/km-publications/web/ML/core/hpc-doc/). It should provide all necassary information. For other questions, please use the cluster chat.
+
+Some potentially useful commands:
+```bash
+# starts an interactive job with pytorch (8hrs time limit)
+$ srun -K \
+  --container-image=/netscratch/enroot/nvcr.io_nvidia_pytorch_23.07-py3.sqsh \
+  --container-workdir="`pwd`" \
+  --container-mounts=/netscratch/$USER:/netscratch/$USER,/ds:/ds:ro,"`pwd`":"`pwd`" \
+   --time 08:00:00 --pty bash
+
+# list your current jobs
+squeue --me
+```
+
 ## Docker & containers
 
+PEGASUS uses enroot for containers. If you have rebuild Docker images you can convert them as follows:
+```bash
+srun -p $ANY_PARTITION \
+  enroot import \
+  -o /netscratch/$USER/enroot/malteos_eulm_latest.sqsh \
+  'docker://ghcr.io#malteos/eulm:latest'
+```
+
+Build custom images with Podman:
+```bash
+sbin/podman_build.sh
+```
+
 ## Jupyter notebooks
+
+You can run Jupyter noteboks on Pegasus:
+
+```bash
+# start interactive compute job
+# --container-save=$EVAL_DEV_IMAGE 
+srun \
+  --container-mounts=/netscratch:/netscratch,/home/$USER:/home/$USER \
+  --container-image=$IMAGE \
+  --container-workdir=$(pwd) -p RTX6000 --time 08:00:00 --pty /bin/bash
+
+# run in compute job
+echo "Jupyter starting at ... http://${HOSTNAME}.kl.dfki.de:8880" && jupyter notebook --ip=0.0.0.0 --port=8880 \
+    --allow-root --no-browser --config /home/mostendorff/.jupyter/jupyter_notebook_config.json \
+    --notebook-dir /netscratch/mostendorff/experiments
+
+# start with fixed token (for VSCode -> "Specify Jupyter connection")
+JUPYTER_TOKEN=yoursecrettoken jupyter notebook
+```
