@@ -65,7 +65,7 @@ A SSH-config may contain entries like below. Replace `<dfki_account`> with your 
 Host pegasus.dfki  # a custom hostname
     User <pegasus_account>
     HostName login2.pegasus.kl.dfki.de  # change this to a different login node if needed
-    ProxyJump <pegasus_account>@sshgate.sb.dfki.de
+    ProxyJump <dfki_account>@sshgate.sb.dfki.de
 
 ```
 
