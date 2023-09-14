@@ -1,5 +1,7 @@
 # Getting started
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) 
+
 This repository contains tutorials, scripts, examples etc. for getting started with your machine learning / NLP project.
 
 The information are mainly tailored to users of [DFKI's PEGASUS system](http://projects.dfki.uni-kl.de/km-publications/web/ML/core/hpc-doc/).
@@ -166,3 +168,8 @@ echo "Jupyter starting at ... http://${HOSTNAME}.kl.dfki.de:8880" && jupyter not
 # start with fixed token (for VSCode -> "Specify Jupyter connection")
 JUPYTER_TOKEN=yoursecrettoken jupyter notebook
 ```
+
+
+## Other useful links & resources
+
+- https://github.com/stas00/ml-engineering/
