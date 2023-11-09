@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "torchrun train_script.py",
+            "type": "python",
+            "request": "launch",
+            "module": "torch.distributed.run",
+            "justMyCode": false,
+            "args": [
+                "--standalone",
+                "--nnodes=1",
+                "--nproc-per-node=2",
+                "train_script.py"
+            ]
+        }
+    ]
+}
