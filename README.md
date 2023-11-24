@@ -73,6 +73,26 @@ Host pegasus.dfki  # a custom hostname
 
 With such a config, you can simply connect to PEGASUS by typing `ssh pegasus.dfki`.
 
+#### SSH proxy
+
+An SSH connectio can be used a proxy to access resources from the intranet:
+
+```bash
+# replace <proxy_port> with a port number, e.g. 8001
+ssh -D <proxy_port> pegasus.dfki
+```
+
+This creates a SOCKS proxy (see https://ma.ttias.be/socks-proxy-linux-ssh-bypass-content-filters/).
+
+Enable this proxy via or system settings or browser settings or use a proxy browser plugin like [FoxyProxy](https://help.getfoxyproxy.org/index.php/knowledge-base/how-to-use-your-proxy-service-with-chrome-and-foxyproxy-extension/):
+
+Use the following settings:
+
+-  Proxy Type: SOCKS5
+-  Proxy IP address: localhost
+-  Proxy port: `<proxy_port>`
+
+
 ### tmux
 
 You connection to a remote might be lost and, therefore, it is important to maintain sessions of the remote server independent from your own connection. 
