@@ -13,3 +13,4 @@ pip install -r requirements.txt
 ## See also
 
 - https://pytorch.org/docs/stable/elastic/run.html
+- https://pytorch.org/docs/master/notes/ddp.html#example
